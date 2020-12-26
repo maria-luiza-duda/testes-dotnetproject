@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using System;
 using System.Globalization;
-using Vaquinha.Domain.Base;
+using ONGColab.Domain.Base;
 
 namespace Vaquinha.Domain.Entities
 {

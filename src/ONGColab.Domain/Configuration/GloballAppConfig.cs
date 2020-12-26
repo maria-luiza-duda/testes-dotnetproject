@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vaquinha.Domain
+namespace ONGColab.Domain
 {
     public class GloballAppConfig
     {

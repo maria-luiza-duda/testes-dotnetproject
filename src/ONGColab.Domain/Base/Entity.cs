@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace Vaquinha.Domain.Base
+namespace ONGColab.Domain.Base
 {
     public abstract class Entity
     {
