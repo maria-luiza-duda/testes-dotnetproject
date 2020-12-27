@@ -1,10 +1,10 @@
 ﻿using FluentValidation.Results;
 using System.Collections.Generic;
 using System.Linq;
-using Vaquinha.Domain.Base;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain.Base;
+using ONGColab.Domain.Entities;
 
-namespace Vaquinha.Domain
+namespace ONGColab.Domain
 {
     public interface IDomainNotificationService
     {

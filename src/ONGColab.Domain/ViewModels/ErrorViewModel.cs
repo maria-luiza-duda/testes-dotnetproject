@@ -1,4 +1,4 @@
-﻿namespace Vaquinha.Domain.ViewModels
+﻿namespace ONGColab.Domain.ViewModels
 {
     public class ErrorViewModel
     {

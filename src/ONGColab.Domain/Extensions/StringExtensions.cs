@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Vaquinha.Domain.Extensions
+namespace ONGColab.Domain.Extensions
 {
     public static class StringExtensions
     {

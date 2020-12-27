@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vaquinha.Domain.ViewModels;
+using ONGColab.Domain.ViewModels;
 
-namespace Vaquinha.Domain
+namespace ONGColab.Domain
 {
     public interface IPaymentService
     {
         Task<IEnumerable<CausaViewModel>> RecuperarInstituicoesAsync(int page = 0);
-        Task AdicionadDoacaoAsync(DoacaoViewModel doacao);
+        Task AdicionaVoluntariadoAsync(VoluntariadoViewModel voluntariado);
     }
 }

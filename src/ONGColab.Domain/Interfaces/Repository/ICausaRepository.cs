@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain.Entities;
 
-namespace Vaquinha.Domain
+namespace ONGColab.Domain
 {
     public interface ICausaRepository
     {

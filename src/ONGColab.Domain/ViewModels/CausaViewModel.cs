@@ -1,8 +1,8 @@
-﻿namespace Vaquinha.Domain.ViewModels
+﻿namespace ONGColab.Domain.ViewModels
 {
     public class CausaViewModel
     {
-        public string Nome { get; set; }
+        public string ONG { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
     }

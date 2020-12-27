@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Vaquinha.Domain.ViewModels;
+using ONGColab.Domain.ViewModels;
 
-namespace Vaquinha.Domain
+namespace ONGColab.Domain
 {
     public interface IHomeInfoRepository
     {
