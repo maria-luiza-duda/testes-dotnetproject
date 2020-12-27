@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Logging;
 using NToastNotify;
 using System.Threading.Tasks;
-using Vaquinha.Domain;
+using ONGColab.Domain;
 
-namespace Vaquinha.MVC.Controllers
+namespace ONGColab.MVC.Controllers
 {
     public class HomeController : Controller
     {

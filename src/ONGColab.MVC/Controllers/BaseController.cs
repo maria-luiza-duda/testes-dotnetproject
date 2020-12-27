@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
-using Vaquinha.Domain;
+using ONGColab.Domain;
 
-namespace Vaquinha.MVC.Controllers
+namespace ONGColab.MVC.Controllers
 {
     public class BaseController : Controller
     {

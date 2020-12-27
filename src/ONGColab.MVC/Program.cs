@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Vaquinha.Repository.Context;
+using ONGColab.Repository.Context;
 
-namespace Vaquinha.MVC
+namespace ONGColab.MVC
 {
     public class Program
     {
@@ -13,8 +13,8 @@ namespace Vaquinha.MVC
 
             using var scope = host.Services.CreateScope();
             var services = scope.ServiceProvider;
-            var context = scope.ServiceProvider.GetService<VaquinhaOnlineDBContext>();
-            VaquinhaOnLineSeed.Seed(context);
+            var context = scope.ServiceProvider.GetService<ONGColabOnlineDBContext>();
+            ONGColabOnLineSeed.Seed(context);
             
             host.Run();
         }

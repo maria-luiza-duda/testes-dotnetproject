@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vaquinha.Domain\Vaquinha.Domain.csproj" />
-    <ProjectReference Include="..\Vaquinha.Service\Vaquinha.Service.csproj" />
+    <ProjectReference Include="..\ONGColab.Domain\ONGColab.Domain.csproj" />
+    <ProjectReference Include="..\ONGColab.Service\ONGColab.Service.csproj" />
   </ItemGroup>
 
 </Project>

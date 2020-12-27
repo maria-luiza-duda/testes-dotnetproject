@@ -2,19 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Vaquinha.Domain;
-using Vaquinha.Repository;
-using Vaquinha.Repository.Context;
-using Vaquinha.Service;
-using Vaquinha.Service.AutoMapper;
+using ONGColab.Domain;
+using ONGColab.Repository;
+using ONGColab.Repository.Context;
+using ONGColab.Service;
+using ONGColab.Service.AutoMapper;
 
-namespace Vaquinha.MVC.Extensions
+namespace ONGColab.MVC.Extensions
 {
     public static class StartupExtensions
     {
         public static IServiceCollection AddDbContext(this IServiceCollection services)
         {
-            services.AddDbContext<VaquinhaOnlineDBContext>(opt => opt.UseInMemoryDatabase("VaquinhaOnLineDIO"));
+            services.AddDbContext<ONGColabOnlineDBContext>(opt => opt.UseInMemoryDatabase("ONGColabOnLineDIO"));
 
             return services;
         }
@@ -25,8 +25,8 @@ namespace Vaquinha.MVC.Extensions
             services.AddScoped<IHomeInfoService, HomeInfoService>();
 
             services.AddScoped<IDomainNotificationService, DomainNotificationService>();
-            services.AddScoped<IDoacaoService, DoacaoService>();
-            services.AddScoped<IDoacaoRepository, DoacaoRepository>();
+            services.AddScoped<IVoluntariadoService, VoluntariadoService>();
+            services.AddScoped<IVoluntariadoRepository, VoluntariadoRepository>();
 
             services.AddScoped<ICausaRepository, CausaRepository>();
             services.AddScoped<IHomeInfoRepository, HomeInfoRepository>();
@@ -41,7 +41,7 @@ namespace Vaquinha.MVC.Extensions
 
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile<VaquinhaOnLineMappingProfile>();
+                cfg.AddProfile<ONGColabOnLineMappingProfile>();
             });
 
             var mapper = config.CreateMapper();

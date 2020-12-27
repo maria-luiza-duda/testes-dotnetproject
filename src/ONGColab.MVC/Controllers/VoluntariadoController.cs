@@ -1,28 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
 using System.Threading.Tasks;
-using Vaquinha.Domain;
-using Vaquinha.Domain.ViewModels;
+using ONGColab.Domain;
+using ONGColab.Domain.ViewModels;
 
-namespace Vaquinha.MVC.Controllers
+namespace ONGColab.MVC.Controllers
 {
-    public class DoacoesController : BaseController
+    public class VoluntariadoController : BaseController
     {
-        private readonly IDoacaoService _doacaoService;
+        private readonly IVoluntariadoService _voluntariadoService;
         private readonly IDomainNotificationService _domainNotificationService;
 
-        public DoacoesController(IDoacaoService doacaoService,
+        public DoacoesController(IVoluntariadoService voluntariadoService,
                                  IDomainNotificationService domainNotificationService,
                                  IToastNotification toastNotification) : base(domainNotificationService, toastNotification)
         {
-            _doacaoService = doacaoService;
+            _voluntariadoService = voluntariadoService;
             _domainNotificationService = domainNotificationService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(nameof(Index), await _doacaoService.RecuperarDoadoresAsync());
+            return View(nameof(Index), await _voluntariadoService.RecuperarVoluntariadosAsync());
         }
 
         [HttpGet]
@@ -32,9 +32,9 @@ namespace Vaquinha.MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(DoacaoViewModel model)
+        public IActionResult Create(VoluntariadoViewModel model)
         {
-            _doacaoService.RealizarDoacaoAsync(model);
+            _voluntariadoService.RealizarVoluntariadoAsync(model);
 
             if (PossuiErrosDominio())
             {
@@ -42,7 +42,7 @@ namespace Vaquinha.MVC.Controllers
                 return View(model);
             }
 
-            AdicionarNotificacaoOperacaoRealizadaComSucesso("Doação realizada com sucesso!<p>Obrigado por apoiar nossa causa :)</p>");
+            AdicionarNotificacaoOperacaoRealizadaComSucesso("Voluntariado disponível!<p>Faça já sua candidatura </p>");
             return RedirectToAction("Index", "Home");
         }
 

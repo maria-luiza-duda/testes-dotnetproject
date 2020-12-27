@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NToastNotify;
-using Vaquinha.MVC.Extensions;
+using Rede de apoio para ONGs.MVC.Extensions;
 
-namespace Vaquinha.MVC
+namespace Rede de apoio para ONGs.MVC
 {
     public class StartupWebTests
     {
@@ -32,7 +32,7 @@ namespace Vaquinha.MVC
             }, new NToastNotifyOption
             {
                 DefaultSuccessTitle = "Yeah!",
-                DefaultSuccessMessage = "Operação realizada com sucesso!",
+                DefaultSuccessMessage = "Operaï¿½ï¿½o realizada com sucesso!",
 
                 DefaultErrorTitle = "Ops!",
                 DefaultErrorMessage = "Algo deu errado!"

@@ -1,0 +1,94 @@
+﻿@model ONGColab.Domain.ViewModels.DoacaoViewModel
+
+@{
+    ViewData["Title"] = "Se voluntarie";
+}
+
+
+<form asp-action="Create" asp-controller="Voluntariado" method="post">
+
+    <div class="text-center">
+        <h2>Doe agora</h2>
+
+        <hr />
+        <center>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Candidatura" class="control-label"></label>
+                    <input asp-for="Candidatura" id="candidatura" placeholder="Vaga de candidatura" class="form-control" />
+                </div>
+            </div>
+            <hr />
+        </center>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                <div class="form-group">
+                    <input asp-for="DadosPessoais.Nome" placeholder="Nome Completo" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="DadosPessoais.Email" placeholder="Email" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <textarea asp-for="DadosPessoais.HabilidadesVaga" class="form-control" rows="3" maxlength="200"
+                              placeholder="Coloque aqui as habilidades que você possui para a vaga" data-val="true"></textarea>
+                </div>
+
+                <div class="form-group float-right">
+                    <label asp-for="DadosPessoais.Candidatura" class="control-label"></label>
+                    <input asp-for="DadosPessoais.Candidatura" />
+                </div>
+
+            </fieldset>
+        </div>
+        <div class="col-md-5">
+
+            <fieldset>
+                <legend>Experiências profissionais</legend>
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input asp-for="Experiencia.Formacao" maxlength="150" placeholder="Experiência" class="form-control small" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input asp-for="Experiencia.ExperienciaProfissional" placeholder="Experiência Profissional" class="form-control small" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <input asp-for="Experiencia.TempoTrabalho" placeholder="Tempo de experiência" class="form-control small" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input asp-for="Experiencia.AtividadesExercidas" placeholder="Atividades Exercidas" class="form-control small" />
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+        <div class="col-md-3 text-center"></div>
+    </div>
+    <div class="text-center">
+        <div class="form-group">
+            <input type="submit" value="Candidatar" class="btn btn-yellow" />
+        </div>
+    </div>
+
+</form>

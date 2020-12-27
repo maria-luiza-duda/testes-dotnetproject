@@ -1,12 +1,12 @@
-﻿@model IEnumerable<Vaquinha.Domain.ViewModels.DoadorViewModel>
+﻿@model IEnumerable<ONGColab.Domain.ViewModels.DoadorViewModel>
 @using System.Globalization
  
 @{
-    ViewData["Title"] = "Doadores";
+    ViewData["Title"] = "Voluntárixs";
 }
 
 <div class="text-center">
-    <h3>Veja quem já doou!</h3>
+    <h3>Veja os voluntárixs que já se candidataram!</h3>
     <hr />
 </div>
 
@@ -18,13 +18,10 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MensagemApoio)
+                @Html.DisplayNameFor(model => model.HabilidadesVaga)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Valor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoTempo)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
         </tr>
     </thead>
@@ -38,13 +35,10 @@
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MensagemApoio)
+                        @Html.DisplayFor(modelItem => item.HabilidadesVaga)
                     </td>
                     <td>
-                        <span>@item.Valor.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"))</span>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DescricaoTempo)
+                        @Html.DisplayFor(modelItem => item.Email)
                     </td>
                 </tr>
             }
@@ -53,7 +47,7 @@
         {
             <tr>
                 <td colspan="4">
-                    <center> <span class="text-center">Ainda não houveram doações. Seja você o primeiro!</span></center>
+                    <center> <span class="text-center">Essa ONG ainda não possui voluntários inscritos, seja você o primeiro!</span></center>
                 </td>
             </tr>
         }
