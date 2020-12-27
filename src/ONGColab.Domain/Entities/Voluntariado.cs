@@ -9,7 +9,7 @@ namespace ONGColab.Domain.Entities
         private Voluntariado() { }
 
         public Voluntariado(Guid id, Guid dadosPessoaisId, Guid enderecoId,
-                      Voluntario dadosPessoais, Causa funcaoTrabalho, Formacao nivelXP)
+                      Voluntarix dadosPessoais, Causa funcaoTrabalho, Experiencia xp)
         {
             Id = id;
             DataHora = DateTime.Now;
@@ -17,7 +17,7 @@ namespace ONGColab.Domain.Entities
             DadosPessoaisId = dadosPessoaisId;
             EnderecoId = enderecoId;
 
-            NivelXP = nivelXP;
+            Xp = xp;
 
             DadosPessoais = dadosPessoais;
             FuncaoTrabalho = funcaoTrabalho;
@@ -28,7 +28,7 @@ namespace ONGColab.Domain.Entities
 
         public DateTime DataHora { get; private set; }
 
-        public Voluntario DadosPessoais { get; private set; }
+        public Voluntarix DadosPessoais { get; private set; }
         public Causa FuncaoTrabalho { get; private set; }
 
         public void AtualizarDataInscricao()
@@ -36,17 +36,17 @@ namespace ONGColab.Domain.Entities
             DataHora = DateTime.Now;
         }
 
-        public void AdicionarPessoa(Voluntario voluntario)
+        public void AdicionarPessoa(Voluntarix voluntarix)
         {
-            DadosPessoais = voluntario;
+            DadosPessoais = voluntarix;
         }
 
         public void AdicionarEndereco(Endereco endereco) {
             Endereco = endereco;
         }
 
-        public void AdicionarNivelXP(Formacao nivelXP) {
-            NivelXP = nivelXP;
+        public void AdicionarXp(Experiencia xp) {
+            Xp = xp;
         }
 
         public void AdicionarFuncaoTrabalho(Causa funcaoTrabalho) {
@@ -64,8 +64,8 @@ namespace ONGColab.Domain.Entities
     {
         public VoluntariadoValidacao()
         {
-            RuleFor(a => a.DadosPessoais).NotNull().WithMessage("Os Dados Pessoais são obrigatórios").SetValidator(new VoluntarioValidacao());
-            RuleFor(a => a.NivelXP).NotNull().WithMessage("Insira a sua formação.").SetValidator(new FormacaoValidacao());
+            RuleFor(a => a.DadosPessoais).NotNull().WithMessage("Os Dados Pessoais são obrigatórios").SetValidator(new VoluntarixValidacao());
+            RuleFor(a => a.Xp).NotNull().WithMessage("Insira a sua formação.").SetValidator(new ExperienciaValidacao());
             RuleFor(a => a.FuncaoTrabalho).NotNull().WithMessage("Escolha uma função para o trabalho voluntário.").SetValidator(new CausaValidacao());
         }
     }

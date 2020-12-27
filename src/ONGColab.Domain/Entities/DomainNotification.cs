@@ -1,4 +1,4 @@
-﻿namespace Vaquinha.Domain.Entities
+﻿namespace ONGColab.Domain.Entities
 {
     public class DomainNotification
     {
