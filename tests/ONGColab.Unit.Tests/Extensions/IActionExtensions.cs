@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
-using Vaquinha.MVC;
+using ONGColab.MVC;
 
-namespace Vaquinha.Unit.Tests.Extensions
+namespace ONGColab.Unit.Tests.Extensions
 {
     public static class IActionExtensions
     {

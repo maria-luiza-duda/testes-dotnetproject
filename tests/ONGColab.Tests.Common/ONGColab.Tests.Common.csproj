@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Vaquinha.MVC\Vaquinha.MVC.csproj" />
-    <ProjectReference Include="..\..\src\Vaquinha.Service\Vaquinha.Service.csproj" />
-    <ProjectReference Include="..\..\src\Vaquinha.Repository\Vaquinha.Repository.csproj" />
-    <ProjectReference Include="..\..\src\Vaquinha.Domain\Vaquinha.Domain.csproj" />
+    <ProjectReference Include="..\..\src\ONGColab.MVC\ONGColab.MVC.csproj" />
+    <ProjectReference Include="..\..\src\ONGColab.Service\ONGColab.Service.csproj" />
+    <ProjectReference Include="..\..\src\ONGColab.Repository\ONGColab.Repository.csproj" />
+    <ProjectReference Include="..\..\src\ONGColab.Domain\ONGColab.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,12 +3,12 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Net.Http;
-using Vaquinha.Domain;
-using Vaquinha.Integration.Tests.Config;
-using Vaquinha.MVC;
+using ONGColab.Domain;
+using ONGColab.Integration.Tests.Config;
+using ONGColab.MVC;
 using Xunit;
 
-namespace Vaquinha.Integration.Tests.Fixtures
+namespace ONGColab.Integration.Tests.Fixtures
 {
     [CollectionDefinition(nameof(IntegrationWebTestsFixtureCollection))]
     public class IntegrationWebTestsFixtureCollection : ICollectionFixture<IntegrationTestsFixture<StartupWebTests>>

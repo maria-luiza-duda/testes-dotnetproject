@@ -1,21 +1,21 @@
 ﻿using FluentAssertions;
 using Xunit;
-using Vaquinha.Domain;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain;
+using ONGColab.Domain.Entities;
 using System.Linq;
-using Vaquinha.Tests.Common.Fixtures;
+using ONGColab.Tests.Common.Fixtures;
 
-namespace Vaquinha.Unit.Tests.DomainTests
+namespace ONGColab.Unit.Tests.DomainTests
 {
-    [Collection(nameof(PessoaFixtureCollection))]
-    public class DomainNotificationServiceTests: IClassFixture<PessoaFixture>
+    [Collection(nameof(VoluntarixFixtureCollection))]
+    public class DomainNotificationServiceTests: IClassFixture<VoluntarixFixture>
     {
-        private readonly PessoaFixture _pessoaFixture;
+        private readonly VoluntarixFixture _voluntarixFixture;
         private readonly IDomainNotificationService _domainNotificationService;
 
-        public DomainNotificationServiceTests(PessoaFixture fixture)
+        public DomainNotificationServiceTests(VoluntarixFixture fixture)
         {
-            _pessoaFixture = fixture;
+            _voluntarixFixture = fixture;
             _domainNotificationService = new DomainNotificationService();
         }
 
@@ -27,7 +27,7 @@ namespace Vaquinha.Unit.Tests.DomainTests
             var domainNotification = new DomainNotificationService();
 
             // Assert
-            domainNotification.PossuiErros.Should().BeFalse(because:"ainda não foi adicionado nenhuma notificadao de dominino");
+            domainNotification.PossuiErros.Should().BeFalse(because:"ainda não foi adicionado nenhuma notificação de dominino");
         }
         
         [Trait("DomainNotificationService", "DomainNotificationService_AdicionarNotificacao_HasNotificationsTrue")]
@@ -52,20 +52,20 @@ namespace Vaquinha.Unit.Tests.DomainTests
         public void DomainNotificationService_AdicionarEntidade_HasNotificationsTrue()
         {
             // Arrange
-            var pessoa = _pessoaFixture.PessoaVazia();
-            pessoa.Valido();
+            var voluntarix = _pessoaFixture.VoluntarixVazio();
+            voluntarix.Valido();
 
             // Act
-            _domainNotificationService.Adicionar(pessoa);
+            _domainNotificationService.Adicionar(voluntarix);
 
             // Assert
-            var notifications = _domainNotificationService.RecuperarErrosDominio().Select(a => a.MensagemErro);
+            var notifications = _domainNotificationService.RecuperarErrosDominio().Select(a => a.HabilidadesVaga);
 
             notifications.Should().HaveCount(2, because: "nenhum dos 2 campos obrigatórios foi informado.");
             notifications.Should().Contain("O campo Nome é obrigatório.", because: "o campo Nome não foi informado.");
             notifications.Should().Contain("O campo Email é obrigatório.", because: "o campo Email não foi informado.");
 
-            _domainNotificationService.PossuiErros.Should().BeTrue(because: "foi adicionado a entidade pessoa inválida");
+            _domainNotificationService.PossuiErros.Should().BeTrue(because: "foi adicionado a entidade voluntário inválida");
         }
     }
 }

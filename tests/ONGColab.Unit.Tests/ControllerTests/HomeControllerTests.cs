@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
-using Vaquinha.MVC.Controllers;
-using Vaquinha.Domain;
+using ONGColab.MVC.Controllers;
+using ONGColab.Domain;
 
-namespace Vaquinha.Unit.Tests.ControllerTests
+namespace ONGColab.Unit.Tests.ControllerTests
 {
     public class HomeControllerTests
     {

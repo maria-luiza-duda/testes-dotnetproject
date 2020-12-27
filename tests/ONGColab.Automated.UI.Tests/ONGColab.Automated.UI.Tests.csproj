@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vaquinha.Tests.Common\Vaquinha.Tests.Common.csproj" />
+    <ProjectReference Include="..\ONGColab.Tests.Common\ONGColab.Tests.Common.csproj" />
   </ItemGroup>
 
 </Project>

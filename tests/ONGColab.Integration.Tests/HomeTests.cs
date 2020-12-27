@@ -1,11 +1,11 @@
 ﻿using FluentAssertions;
 using System.Threading.Tasks;
-using Vaquinha.Domain.Extensions;
-using Vaquinha.Integration.Tests.Fixtures;
-using Vaquinha.MVC;
+using ONGColab.Domain.Extensions;
+using ONGColab.Integration.Tests.Fixtures;
+using ONGColab.MVC;
 using Xunit;
 
-namespace Vaquinha.Integration.Tests
+namespace ONGColab.Integration.Tests
 {
     [Collection(nameof(IntegrationWebTestsFixtureCollection))]
     public class HomeTests
@@ -17,9 +17,9 @@ namespace Vaquinha.Integration.Tests
             _integrationTestsFixture = integrationTestsFixture;
         }
 
-        [Trait("HomeControllerIntegrationTests", "HomeController_CarregarPaginaInicial_TotalDoadoresETotalValorArrecadadoDeveSerZero")]
+        [Trait("HomeControllerIntegrationTests", "HomeController_CarregarPaginaInicial_TotalVoluntarixsDeveSerZero")]
         [Fact]
-        public async Task HomeController_CarregarPaginaInicial_TotalDoadoresETotalValorArrecadadoDeveSerZero()
+        public async Task HomeController_CarregarPaginaInicial_TotalVoluntarixsDeveSerZero()
         {
             // Arrange & Act
             var home = await _integrationTestsFixture.Client.GetAsync("Home");
@@ -27,16 +27,9 @@ namespace Vaquinha.Integration.Tests
             // Assert
             home.EnsureSuccessStatusCode();
             var dadosHome = await home.Content.ReadAsStringAsync();
-
-            var totalArrecadado = 0.ToDinheiroBrString();
-            var metaCampanha = _integrationTestsFixture.ConfiguracaoGeralAplicacao.MetaCampanha.ToDinheiroBrString();
-
-            // Dados totais da doação
-            dadosHome.Should().Contain(expected: "Arrecadamos quanto?");
-            dadosHome.Should().Contain(expected: totalArrecadado);
-
-            dadosHome.Should().Contain(expected: "Quanto falta arrecadar?");
-            dadosHome.Should().Contain(expected: metaCampanha);
+            
+            dadosHome.Should().Contain(expected: "Quntos voluntarixs inscritos?");
+            dadosHome.Should().Contain(expected: QuantidadeVoluntarixs);
         }
     }
 }
