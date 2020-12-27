@@ -1,6 +1,6 @@
 ﻿using Polly.Retry;
 
-namespace Vaquinha.Service
+namespace ONGColab.Service
 {
     public interface IPollyService
     {

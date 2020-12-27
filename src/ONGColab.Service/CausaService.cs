@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vaquinha.Domain;
-using Vaquinha.Domain.Entities;
-using Vaquinha.Domain.ViewModels;
+using ONGColab.Domain;
+using ONGColab.Domain.Entities;
+using ONGColab.Domain.ViewModels;
 
-namespace Vaquinha.Service
+namespace ONGColab.Service
 {
     public class CausaService : ICausaService
     {

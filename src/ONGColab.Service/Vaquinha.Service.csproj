@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Vaquinha.Repository\Vaquinha.Repository.csproj" />
+    <ProjectReference Include="..\ONGColab.Repository\ONGColab.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
