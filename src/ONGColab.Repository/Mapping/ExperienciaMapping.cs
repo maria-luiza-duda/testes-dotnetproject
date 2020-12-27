@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain.Entities;
 
-namespace Vaquinha.Repository.Mapping
+namespace ONGColab.Repository.Mapping
 {
-    public class EnderecoMapping : IEntityTypeConfiguration<Endereco>
+    public class ExperienciaMapping : IEntityTypeConfiguration<Experiencia>
     {
-        public void Configure(EntityTypeBuilder<Endereco> builder)
+        public void Configure(EntityTypeBuilder<Experiencia> builder)
         {
             builder.HasKey(a => a.Id);
 
@@ -41,7 +41,7 @@ namespace Vaquinha.Repository.Mapping
             builder.Ignore(e => e.ValidationResult);
             builder.Ignore(e => e.ErrorMessages);
 
-            builder.ToTable("Endereco");
+            builder.ToTable("Experiência profissional");
         }
     }
 }

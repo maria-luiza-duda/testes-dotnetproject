@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain.Entities;
 
-namespace Vaquinha.Repository.Mapping
+namespace ONGColab.Repository.Mapping
 {
-    public class DoacaoMapping : IEntityTypeConfiguration<Doacao>
+    public class VoluntariadoMapping : IEntityTypeConfiguration<Voluntariado>
     {
-        public void Configure(EntityTypeBuilder<Doacao> builder)
+        public void Configure(EntityTypeBuilder<Voluntariado> builder)
         {
             builder.HasKey(a => a.Id);
 
@@ -24,13 +24,12 @@ namespace Vaquinha.Repository.Mapping
             builder.HasOne(d => d.EnderecoCobranca)
                 .WithMany(e => e.Doacoes)
                 .HasForeignKey(d => d.EnderecoCobrancaId);
-
-            // nao salva os dados de cartao na base de dados
+s
             builder.Ignore(e => e.FormaPagamento);
             builder.Ignore(e => e.ValidationResult);
             builder.Ignore(e => e.ErrorMessages);
 
-            builder.ToTable("Doacao");
+            builder.ToTable("Voluntariado");
         }
     }
 }

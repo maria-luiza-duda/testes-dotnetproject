@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vaquinha.Domain;
-using Vaquinha.Domain.Entities;
-using Vaquinha.Repository.Context;
+using ONGColab.Domain;
+using ONGColab.Domain.Entities;
+using ONGColab.Repository.Context;
 
-namespace Vaquinha.Repository
+namespace ONGColab.Repository
 {
     public class CausaRepository : ICausaRepository
     {
-        private readonly VaquinhaOnlineDBContext _dbContext;
+        private readonly ONGColabOnlineDBContext _dbContext;
 
-        public CausaRepository(VaquinhaOnlineDBContext dbContext)
+        public CausaRepository(ONGColabOnlineDBContext dbContext)
         {
             _dbContext = dbContext;
         }

@@ -1,30 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using Vaquinha.Domain;
-using Vaquinha.Domain.ViewModels;
-using Vaquinha.Repository.Context;
+using ONGColab.Domain;
+using ONGColab.Domain.ViewModels;
+using ONGColab.Repository.Context;
 
-namespace Vaquinha.Repository
+namespace ONGColab.Repository
 {
     public class HomeInfoRepository : IHomeInfoRepository
     {
-        private readonly VaquinhaOnlineDBContext _dbContext;
+        private readonly ONGColabOnlineDBContext _dbContext;
 
-        public HomeInfoRepository(VaquinhaOnlineDBContext dbContext)
+        public HomeInfoRepository(ONGColabOnlineDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
         public async Task<HomeViewModel> RecuperarDadosIniciaisHomeAsync()
         {
-            var totalDoadores = _dbContext.Doacoes.CountAsync();
-            var valorTotal = _dbContext.Doacoes.SumAsync(a => a.Valor);
-
-            return new HomeViewModel
-            {
-                ValorTotalArrecadado = await valorTotal,
-                QuantidadeDoadores = await totalDoadores
-            };
+            var totalVoluntarixs = _dbContext.Voluntariado.CountAsync();
         }
     }
 }

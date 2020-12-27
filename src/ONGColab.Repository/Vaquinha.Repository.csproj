@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vaquinha.Domain\Vaquinha.Domain.csproj" />
+    <ProjectReference Include="..\ONGColab.Domain\ONGColab.Domain.csproj" />
   </ItemGroup>
 
 </Project>

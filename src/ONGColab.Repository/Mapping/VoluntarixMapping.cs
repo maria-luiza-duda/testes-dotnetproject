@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain.Entities;
 
-namespace Vaquinha.Repository.Mapping
+namespace ONGColab.Repository.Mapping
 {
-    public class PessoaMapping : IEntityTypeConfiguration<Pessoa>
+    public class VoluntarixMapping : IEntityTypeConfiguration<Voluntarix>
     {
-        public void Configure(EntityTypeBuilder<Pessoa> builder)
+        public void Configure(EntityTypeBuilder<Voluntarix> builder)
         {
             builder.HasKey(a => a.Id);
 
@@ -32,7 +32,7 @@ namespace Vaquinha.Repository.Mapping
             builder.Ignore(e => e.ValidationResult);
             builder.Ignore(e => e.ErrorMessages);
 
-            builder.ToTable("Pessoa");
+            builder.ToTable("Voluntário");
         }
     }
 }

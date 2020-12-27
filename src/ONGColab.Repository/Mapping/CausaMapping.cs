@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Vaquinha.Domain.Entities;
+using ONGColab.Domain.Entities;
 
-namespace Vaquinha.Repository.Mapping
+namespace ONGColab.Repository.Mapping
 {
     public class CausaMapping : IEntityTypeConfiguration<Causa>
     {
